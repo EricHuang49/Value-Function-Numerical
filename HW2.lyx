@@ -1,0 +1,409 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Econ 714 Homework 2
+\end_layout
+
+\begin_layout Author
+Jincheng(Eric) Huang
+\end_layout
+
+\begin_layout Standard
+There is a representative household with preferences:
+\begin_inset Formula 
+\[
+U_{t}=\Bigg[\Big(\log c_{t}-\eta\frac{l_{t}^{2}}{2}\Big)^{0.5}+0.99(\mathbb{E}_{t}U_{t+1}^{-9})^{-\frac{0.5}{9}}\Bigg]^{\frac{1}{0.5}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The household consumes, saves, and works, with a budget constraint:
+\begin_inset Formula 
+\[
+c_{t}+i_{t}=w_{t}l_{t}+r_{t}k_{t}
+\]
+
+\end_inset
+
+There is a production function:
+\begin_inset Formula 
+\[
+c_{t}+i_{t}=e^{z_{t}}k_{t}^{\alpha_{t}}l_{t}^{1-\alpha_{t}}
+\]
+
+\end_inset
+
+with a law of motion for capital:
+\begin_inset Formula 
+\[
+k_{t+1}=0.9k_{t}+i_{t}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $i_{t}\geq0$
+\end_inset
+
+ and a technology level 
+\begin_inset Formula $z_{t}$
+\end_inset
+
+ that follows a Markov Chain that takes vales in:
+\begin_inset Formula 
+\[
+z_{t}\in\{-0.0673,-0.0336,0,0.0336,0.0673\}
+\]
+
+\end_inset
+
+with transition matrix:
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccccc}
+0.9727 & 0.0273 & 0 & 0 & 0\\
+0.0041 & 0.9806 & 0.0153 & 0 & 0\\
+0 & 0.0082 & 0.9836 & 0.0082 & 0\\
+0 & 0 & 0.0153 & 0.9806 & 0.0041\\
+0 & 0 & 0 & 0.0273 & 0.9727
+\end{array}\right)
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\alpha_{t}\in\{0.25,0.3,0.35\}
+\]
+
+\end_inset
+
+with transition matrix:
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccc}
+0.9 & 0.07 & 0.03\\
+0.05 & 0.9 & 0.05\\
+0.03 & 0.07 & 0.9
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Social Planer (5 points)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $1-\psi=0.5$
+\end_inset
+
+ be the parameter for intertemporal elasticity of substitution, 
+\begin_inset Formula $1-\gamma=-9$
+\end_inset
+
+ be the parameter for risk aversion, 
+\begin_inset Formula $\beta=0.99$
+\end_inset
+
+ be the discount factor, and 
+\begin_inset Formula $1-\delta=0.9$
+\end_inset
+
+ be the persistency of capital stock.
+ In addition, let 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ and 
+\begin_inset Formula $\Pi$
+\end_inset
+
+ denote the transition matrices for the elasticity of output with respect
+ to capital 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and TFP 
+\begin_inset Formula $z$
+\end_inset
+
+ respectively.
+ The social planner maximizes the total utility of the household subject
+ to resource constraints and aggregate laws of motion:
+\begin_inset Formula 
+\begin{align*}
+V(z,\alpha,k)^{1-\psi} & =\max_{C,I,L}\Bigg\{\Big(\log c-\eta\frac{l^{2}}{2}\Big)^{1-\psi}+\beta\Big[\sum_{\alpha',z'}\Gamma_{\alpha'|\alpha}\Pi_{z'|z}\Big(V(z',\alpha',k')\Big)^{1-\gamma}\Big]^{\frac{1-\psi}{1-\gamma}}\Bigg\}\\
+\text{s.t. } & c+i=e^{z}k^{\alpha}l^{1-\alpha}\\
+ & c,k,l\geq0\\
+ & k'=(1-\delta)k+i
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Steady State (5 points)
+\end_layout
+
+\begin_layout Standard
+Since the model is a standard RBC model with no frictions or externalities,
+ the First Welfare Theorem holds, which means that we can calculate the
+ steady state from the social planner's problem.
+ In steady state, the exogenous states are assumed to be at deterministic
+ levels 
+\begin_inset Formula $z_{ss}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{ss}=0.3$
+\end_inset
+
+, so the continuation value becomes 
+\begin_inset Formula $\beta V(z_{ss},\alpha_{ss},k')^{1-\psi}.$
+\end_inset
+
+ Let 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ be the Lagrange multiplier on the resource constraint in the steady state,
+ and substitute the law of motion for capital into the value function for
+ the next period, then the FOCs are:
+\begin_inset Formula 
+\begin{align}
+[c] & (1-\psi)\Big(\log c-\eta\frac{l^{2}}{2}\Big)^{-\psi}\frac{1}{c}=\lambda\label{eq:FOCc}\\{}
+[i] & \beta(1-\psi)V(z_{ss},\alpha_{ss},k')^{-\psi}V_{k'}(z_{ss},\alpha_{ss},k')=\lambda\label{eq:FOCi}\\{}
+[l] & (1-\psi)\Big(\log c-\eta\frac{l^{2}}{2}\Big)^{-\psi}(-\eta l)=-\lambda(1-\alpha_{ss})e^{z_{ss}}k^{\alpha_{ss}}l^{-\alpha_{ss}}\label{eq:FOCl}
+\end{align}
+
+\end_inset
+
+and the envelope condition is:
+\begin_inset Formula 
+\begin{equation}
+(1-\psi)V(z_{ss},\alpha_{ss},k)^{-\psi}V_{k}(z_{ss},\alpha_{ss},k)=\lambda\alpha_{ss}e^{z_{ss}}k^{\alpha_{ss}-1}l^{1-\alpha_{ss}}+\beta(1-\delta)(1-\psi)V(z_{ss},\alpha_{ss},k')^{-\psi}V_{k'}(z_{ss},\alpha_{ss},k')\label{eq:envelope}
+\end{equation}
+
+\end_inset
+
+Substituting equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FOCi"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ into the envelope condition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:envelope"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, and using the condition that 
+\begin_inset Formula $k'=k=k_{ss}$
+\end_inset
+
+ in the steady state, we get
+\begin_inset Formula 
+\[
+1=\beta\alpha_{ss}e^{z_{ss}}k^{\alpha_{ss}-1}l^{1-\alpha_{ss}}+\beta(1-\delta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In addition, dividing equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FOCl"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ by equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FOCc"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ yields
+\begin_inset Formula 
+\[
+\eta lc=(1-\alpha_{ss})e^{z_{ss}}k^{\alpha_{ss}}l^{-\alpha_{ss}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Together with the resource constraint, we have 3 equations and 4 unknowns
+ (3 steady state levels and 
+\begin_inset Formula $\eta$
+\end_inset
+
+).
+ Let 
+\begin_inset Formula $c_{ss},k_{ss}$
+\end_inset
+
+ and 
+\begin_inset Formula $l_{ss}$
+\end_inset
+
+ be the steady state levels of consumption, capital stock and labor respectively
+, and collect the equations above:
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{k_{ss}}{l_{ss}}=\Bigg(\frac{1-\beta(1-\delta)}{\beta\alpha_{ss}e^{z_{ss}}}\Bigg)^{\alpha_{ss}-1}\\
+l_{ss}c_{ss}=\frac{(1-\alpha_{ss})e^{z_{ss}}}{\eta}\Bigg(\frac{k_{ss}}{l_{ss}}\Bigg)^{\alpha_{ss}}\\
+\frac{c_{ss}}{l_{ss}}+\delta\frac{k_{ss}}{l_{ss}}=e^{z_{ss}}\Bigg(\frac{k_{ss}}{l_{ss}}\Bigg)^{\alpha_{ss}}
+\end{cases}
+\]
+
+\end_inset
+
+We can use the first equation to calculate the capital-labor ratio.
+ Note however that the level of labor 
+\begin_inset Formula $l_{ss}$
+\end_inset
+
+ is not determined.
+ To pin down the steady state levels, we normalize the output 
+\begin_inset Formula $e^{z_{ss}}k_{ss}^{\alpha_{ss}}l_{ss}^{1-\alpha_{ss}}$
+\end_inset
+
+ to 100.
+ Then we get the following steady state levels:
+\begin_inset Formula 
+\[
+\begin{cases}
+c_{ss}= & 72.7523\\
+k_{ss}= & 272.4771\\
+l_{ss}= & 65.0774\\
+\eta= & 2.2719e-04
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Value Function Iteration with a Fixed Grid (10 points)
+\end_layout
+
+\end_body
+\end_document
